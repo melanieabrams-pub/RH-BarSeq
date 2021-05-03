@@ -170,5 +170,5 @@ if __name__ == "__main__":
 
     effect_dict,mean_dict=CalcEffectSize(stats_dict,sc_dict,sp_dict,save_fx_size=True,save_name=stats_data.split('.mwu')[0]+'.all_fxsizes',printTop=0)
 
-    filtered_effect_dict=FilterEffectSize(effect_dict, mean_dict,stats_dict,p_cutoff,save_name=stats_data.split('.mwu')[0]+'pcut'+str(p_cutoff).replace('.','pt')+'spmaxoffby'+str(sp_max_offcenter).replace('.','pt')+'.fxsizes',printTop=4)
+    filtered_effect_dict=FilterEffectSize(effect_dict, mean_dict,stats_dict,p_cutoff,save_name=stats_data.split('.mwu')[0]+'pcut'+str(p_cutoff).replace('.','pt')+'.fxsizes',printTop=4)
     
