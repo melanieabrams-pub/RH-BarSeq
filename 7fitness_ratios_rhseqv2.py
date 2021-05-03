@@ -48,7 +48,7 @@ if __name__ == '__main__':
                         if each_col.startswith('T0'):
                                 reads_T0 = each_col
                 for biorepexptl in reads_exptl:
-                        repID = biorepexptl[2:]
+                        repID = biorepexptl[5:]
                         for biorep in reads_ctrl:
                                 if biorep == 'ctrl_br_averaged_reads':
                                         avgctrl = biorep

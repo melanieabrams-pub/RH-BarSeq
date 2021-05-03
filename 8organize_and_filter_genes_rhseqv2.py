@@ -33,7 +33,7 @@ def calc_mean_insert_ratios(grp):
 	return grp
 
 def calc_stdev_insert_ratios(grp):
-	grp['stdev9_ctrl'] = np.nanstd(grp['exptl_ctrl_log2_br_averaged_reads']) 
+	grp['stdev_exptl_ctrl'] = np.nanstd(grp['exptl_ctrl_log2_br_averaged_reads']) 
 	return grp
 
 def check_for_singles(grp):

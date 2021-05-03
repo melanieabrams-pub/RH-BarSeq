@@ -49,7 +49,7 @@ def ParseFitness(rep_data,stats_dict):
             allele_index = row_data.index('allele')
             logr_indices = []
             for item in row_data:
-                if '39_28_log2' in item and 'br' not in item:  #take individual bioreps' logratios, not the logratio of averaged brs or its cv
+                if 'exptl_ctrl_log2' in item and 'br' not in item:  #take individual bioreps' logratios, not the logratio of averaged brs or its cv
                     logr_indices.append(row_data.index(item))
             header_line = False
             
@@ -87,7 +87,7 @@ def CalcEffectSize(stats_dict,sc_dict,sp_dict,save_fx_size=False,save_name='effe
         if gene=='YLR397C':
                     print('sp_mean')
                     print(sp_mean)
-        fx_dict[gene]=abs(sc_mean-sp_mean) #fx size is absolute value of difference between means of individual brs logratios
+        fx_dict[gene]=sc_mean-sp_mean #fx size is difference between means of individual brs logratios
         mean_dict[gene]=[sc_mean,sp_mean]
 
     print('...done calculating effect sizes!')
@@ -141,7 +141,7 @@ def FilterEffectSize(effect_dict, mean_dict,stats_dict,p_cutoff,save_name='filte
     if printTop>0: #print the top some number of effect sizes
         print('top '+str(printTop)+'filtered effect sizes:')
         for i in range(printTop):
-            for gene in sorted(filtered_effect_dict, key=filtered_effect_dict.get, reverse=True):
+            for gene in sorted(filtered_effect_dict, key=filtered_effect_dict.get, reverse=False):
               if printTop>0:
                   print(gene, filtered_effect_dict[gene])
                   printTop-=1

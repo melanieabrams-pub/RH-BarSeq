@@ -34,7 +34,13 @@ if __name__ == '__main__':
     command+=cmd_start+'7fitness_ratios_rhseqv2.py'+cmd_mid+'*.filtered_inserts;'
     command+=cmd_start+'8organize_and_filter_genes_rhseqv2.py'+cmd_mid+'*.insert_ratios;'
     command+=cmd_start+'9mann_whitney_u_rhseqv2.py'+cmd_mid+'*.filtered_gene_inserts;'
-    command+=cmd_start+'10effect_size_rhseqv2.py'+cmd_mid+'*.filtered_gene_inserts'+'*.mwu_test_results;'
+    command+=cmd_start+'10effect_size_rhseqv2.py *.filtered_gene_inserts *.mwu_test_results;'
+
+    #move outfiles to folders
+##    command+='mkdir fastq_pooled_reads; mv *.fastq_pooled_reads* fastq_pooled_reads/;'
+##    command+='mkdir normalized_pooled_reads; mv *.normalized_pooled* normalized_pooled_reads/;'
+##    command+='mkdir normalized_averaged_techreps; mv *.normalized_averaged_techreps* normalized_averaged_techreps/;'
+##    command+='mkdir normalized_averaged_bioreps; mv *.normalized_averaged_bioreps* normalized_averaged_bioreps/;'
 
 
     if printCommand==True:
