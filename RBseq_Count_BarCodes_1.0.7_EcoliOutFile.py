@@ -14,6 +14,9 @@ from matplotlib.backends.backend_pdf import PdfPages
 import json
 from collections import Counter
 
+#this was modified from the RBseq_Count_Barcodes_1.0.7.py from RBseq repository of Scoradetti
+#counts barcodes in the E. coli pool of N20 barcode vectors before transformation into yeast to generate the hemizygote pool.
+
 
 def OffByOneList(seq):
     if seq[0] in ("A","T","G","C"):
