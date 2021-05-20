@@ -85,12 +85,13 @@ if __name__ == '__main__':
                             for i in sp_inserts_ratios:
                                     print(i)
  
-                    mwu_test = stats.mannwhitneyu(sc_inserts_ratios, sp_inserts_ratios)   # mwu test
-                    two_tailed_pval = mwu_test[1] * 2.0
+                    mwu_test = stats.mannwhitneyu(sc_inserts_ratios, sp_inserts_ratios,alternative='two-sided')   # mwu test #5/19/21: used current version of two sided where it's coded in
+                    u = mwu_test[0]
+                    two_tailed_pval = mwu_test[1] 
                     gene_object.mwu_test = mwu_test
                     gene_object.two_tailed_pval = two_tailed_pval
                     unique_genes_dict[each_gene] = gene_object
-                    pval_dict[each_gene] = two_tailed_pval
+                    pval_dict[each_gene] = two_tailed_pval,u
                     if sc_inserts_ratios == [] or sp_inserts_ratios ==[]:
                             del unique_genes_dict[each_gene]
                             del pval_dict[each_gene]
@@ -98,19 +99,22 @@ if __name__ == '__main__':
 
                 gene_list = []
                 pvalue_list = []
+                u_list = [] 
                 for each_gene, each_pval in pval_dict.items():
-                        pvalue_list.append(each_pval)
+                        pvalue_list.append(each_pval[0])
+                        u_list.append(each_pval[1])
                         gene_list.append(each_gene)
+                        
 
                 #multiple testing correction
                 fdrbh_output = smm.multipletests(pvalue_list, method='fdr_bh') # benjamini hochberg method
                 adjusted_pvalues = fdrbh_output[1].tolist()
-                zipped_pvals = zip(pvalue_list, adjusted_pvalues)
+                zipped_pvals = zip(pvalue_list, adjusted_pvalues,u_list)
                 zipped_gene_info = zip(gene_list, zipped_pvals)
-                unpacked_gene_info = [(gene, pval, adjusted_pval) for (gene, (pval, adjusted_pval)) in zipped_gene_info]
-                pval_df = pd.DataFrame(unpacked_gene_info, columns=['gene', 'pval', 'adjusted_pval'])
+                unpacked_gene_info = [(gene, pval, adjusted_pval,u_list) for (gene, (pval, adjusted_pval,u_list)) in zipped_gene_info]
+                pval_df = pd.DataFrame(unpacked_gene_info, columns=['gene', 'pval', 'adjusted_pval','U-stat'])
                 print(len(pval_df), 'number of genes tested')
 
                 pval_df.sort_values(by='pval', inplace=True)
-                pval_df.to_csv(str(output_folder)+str('/')+str(file_identifier)+'.mwu_test_results', sep='\t', index=False)
+                pval_df.to_csv(str(output_folder)+str('/')+str(file_identifier)+'.mwu_test_results_with_U', sep='\t', index=False)
 
