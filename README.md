@@ -14,3 +14,5 @@ The RH-seq v2 pipeline found here is modified by MAbrams from RH-seq pipeline fr
 
 
 This repository also includes the jupyter notebook by JSkerker for annotation of the poolFile for RBseq analysis of the yeast Tn-seq in the Sc x Sp hybrid pool used in this study, as well as the GFF3-compliant annotation file used by that jupyter notebook.  Elements of the jupyter notebook are modified from the RBseq annotation script described in Coradetti et al., 2018 (https://github.com/stcoradetti/RBseq)
+
+Metafiles and associated files used in the manuscript are provided for convenient replication of results; to do so, adjust file pathways in the metafiles to reflect their new storage directories upon download.
