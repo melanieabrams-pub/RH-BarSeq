@@ -1,0 +1,5 @@
+Fastq	SampleName	UsePrecounted	Poolfile	OutputDir	minRandom	maxRandom	DualIndex	BeforeBarcode	BarcodeLengths	AfterBarcode
+/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/IT013_S14_L005_R1_001.fastq	RBJC45_13	FALSE		/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/barcode_diversity	1	1	AACTGA	GTCGACCTGCAGCGTACG	20,19,18,21	AGAGACCTC
+/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/IT014_S15_L005_R1_001.fastq	RBJC45_14	FALSE		/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/barcode_diversity	2	2	CCTTGA	GTCGACCTGCAGCGTACG	20,19,18,21	AGAGACCTC
+/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/IT015_S16_L005_R1_001.fastq	RBJC45_15	FALSE		/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/barcode_diversity	3	3	ACTGTA	GTCGACCTGCAGCGTACG	20,19,18,21	AGAGACCTC
+/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/IT016_S17_L005_R1_001.fastq	RBJC45_16	FALSE		/usr2/people/jchuong/hiseqdata/SR50_Ecoli_barseq_2020-6-25/barcode_diversity	4	4	CCTGCC	GTCGACCTGCAGCGTACG	20,19,18,21	AGAGACCTC
