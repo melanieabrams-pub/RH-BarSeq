@@ -18,7 +18,8 @@ def parse_file(filename, sep='\t'):
         return df, bio_rep_id
 
 def make_and_populate_new_columns(grp):
-        column2_name = grp.ix[0, 'tech_rep_name']+'_norm_n'
+        column2_name = grp['tech_rep_name'].loc[0]+'_norm_n' #replacing deprecated .ix with .loc syntax
+        #column2_name = grp.ix[0, 'tech_rep_name']+'_norm_n' #.ix deprecated in newer versions of pandas
         grp[column2_name] = grp['normalized_read']
         return grp
 
