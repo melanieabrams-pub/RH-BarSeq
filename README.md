@@ -1,12 +1,14 @@
 # RH-BarSeq
 
 
-Pipeline for reciprocal hemizygosity analysis via sequencing, with barcoding (RH-seq with barcoding)
+<b>Pipeline for reciprocal hemizygosity analysis via sequencing, with barcoding (RH-seq with barcoding)</b>
 
-Summary:
+
+<b>Summary:</b>
+
 The RH-seq with barcoding pipeline found here is described in Abrams and Chuong et al., 2021 (https://doi.org/10.1093/g3journal/jkab412).  Briefly, the analysis uses a modified version of the RBseq pipeline from Coradetti et al. 2018 (v1.1.4) (https://github.com/stcoradetti/RBseq/tree/master/Old_Versions/1.1.4) for the Tn-seq mapping of barcode to transposon insert location, and then to count the barcodes from Barseq competitions; then, the RH-seq analysis is performed with a codebase modified by MAbrams from RH-seq pipeline from Weiss et al., 2018 (https://github.com/weiss19/rh-seq) with modifications from Abrams and Dubin, 2021 (https://github.com/melanieabrams-pub/thermotolerance-loci-across-yeasts) as described in the associated publications.
 
-Steps:
+<b> Steps:</b>
 
 (1) Map the Tn-seq pool with the RBseq_Map_Insertions_v1.1.4_PBa_Jskerker.py and associated metafiles. (See RBseq docs for further details on RBseq metafiles)
 
@@ -17,7 +19,7 @@ Steps:
 (4) Run the entire RH-seq analysis pipeline at once with the optional wrapper script - or run one script at a time.  
 
 
-Metafiles:
+<b>Metafiles:</b>
 
 Metafiles and associated files used in the manuscript are provided for convenient replication of results; to do so, adjust file pathways in the metafiles to reflect their new storage directories upon download. 
 
@@ -41,7 +43,6 @@ matplotlib: 3.2.2
 statsmodels: 0.11.1
 
 
-
-Additional credits:
+<b>Additional credits</b>:
 
 The RBseq codebase from Coradetti et al., 2018, and the RH-seq codebase from Weiss et al., 2018, and the modifications of Abrams and Dubin et al., 2021, form the basis of this pipeline.  This repository includes the jupyter notebook by JSkerker for annotation of the poolFile for RBseq analysis of the yeast Tn-seq in the Sc x Sp hybrid pool used in this study, as well as the GFF3-compliant annotation file used by that jupyter notebook.  Elements of the jupyter notebook are modified from the RBseq annotation script described in Coradetti et al., 2018 (https://github.com/stcoradetti/RBseq)
