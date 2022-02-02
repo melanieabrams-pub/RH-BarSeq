@@ -23,7 +23,7 @@ The RH-seq with barcoding pipeline found here is described in Abrams and Chuong 
 
 Metafiles and associated files used in the manuscript are provided for convenient replication of results; to do so, adjust file pathways in the metafiles to reflect their new storage directories upon download. 
 
-Environment:
+<b>Environment:</b>
 
 There are several package dependencies for this pipeline.
 
