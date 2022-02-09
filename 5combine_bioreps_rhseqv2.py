@@ -27,10 +27,10 @@ def parse_file(filename, sep='\t'):
         return df, condition_ID
 
 def make_and_populate_new_columns(grp):
-        column_name = grp['bio_rep_ID'].loc[0]+'_n_av' #replacing deprecated .ix syntax
+        column_name = grp['bio_rep_ID'].iloc[0]+'_n_av' #replacing deprecated .ix syntax
         #column_name = grp.ix[0, 'bio_rep_ID']+'_n_av'
         grp[column_name] = grp['averaged_tech_rep_reads']
-        column_name2 = grp['bio_rep_ID'].loc[0]+'_tr_coeff' #replacing deprecated .ix syntax
+        column_name2 = grp['bio_rep_ID'].iloc[0]+'_tr_coeff' #replacing deprecated .ix syntax
         #column_name2 = grp.ix[0, 'bio_rep_ID']+'_tr_coeff'
         grp[column_name2] = grp['tr_coeffvar']
         return grp

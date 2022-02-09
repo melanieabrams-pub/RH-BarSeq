@@ -42,7 +42,7 @@ def fillna_and_combine(grp):
 
 def make_and_populate_new_columns(grp):
         
-        condition = grp['condition'].loc[0] #because .ix (below) deprecated, updated 9-17-21
+        condition = grp['condition'].iloc[0] #because .ix (below) deprecated, updated 9-17-21
         #condition = grp.ix[0, 'condition'] #deprecated in newer versions of pandas
 
         if condition != 'T0':
